@@ -24,6 +24,31 @@ class Dashboard extends Component<IProps, IState> {
     };
   }
 
+  componentDidMount() {
+    console.log("Employee componentDidMount called");
+  }
+
+  shouldComponentUpdate() {
+    console.log("Employee should component update called");
+    return false;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log("Employee getSnapshotBeforeUpdate called");
+  }
+
+  componentDidUpdate() {
+    console.log("employee componentDidUpdate called");
+  }
+
+  componentWillUnmount() {
+    console.log("employee component Will Unmount called");
+  }
+
+  componentDidCatch() {
+    console.log("Employee componentDidcatch will called");
+  }
+
   render() {
     return (
       <FlatList<UserDetailsModel>

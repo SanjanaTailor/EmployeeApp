@@ -45,7 +45,34 @@ class Login extends Component<IProps, IState> {
       isValidPassword: false,
       isDisabled: true,
     };
+    console.log("Login constructor called");
   }
+
+  componentDidMount() {
+    console.log("login componentDidMount called");
+  }
+
+  shouldComponentUpdate() {
+    console.log("login should component update called");
+    return true;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log("login getSnapshotBeforeUpdate called");
+  }
+
+  componentDidUpdate() {
+    console.log("login componentDidUpdate called");
+  }
+
+  componentWillUnmount() {
+    console.log("login component Will Unmount called");
+  }
+
+  componentDidCatch() {
+    console.log("login componentDidcatch will called");
+  }
+
 
   loginAttempt = () => {
     if (
@@ -59,6 +86,7 @@ class Login extends Component<IProps, IState> {
   };
 
   render() {
+    console.log("render method called of login");
     return (
       <SafeAreaView style={styles.flexContainer}>
         <ScrollView>
@@ -88,7 +116,7 @@ class Login extends Component<IProps, IState> {
                 ),
                 password: newPassword,
                 isDisabled:
-                  this.state.isValidUsername && this.state.isValidPassword
+                  !this.state.isValidUsername && this.state.isValidPassword
                     ? true
                     : false,
               });
